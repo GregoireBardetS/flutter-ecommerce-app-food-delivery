@@ -124,7 +124,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                           padding: EdgeInsets.only(left: Dimensions.width10),
                           child: Column(
                             children: [
-                              BigText(text: "Nutritious fruit meal in China")
+                              BigText(text: "Nutritious fruit meal in Chinar")
                             ],
                           )
                         )
