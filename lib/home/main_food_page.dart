@@ -55,7 +55,7 @@ class _MainFoodPage extends State<MainFoodPage> {
               ),
             )
           ),
-          const FoodPageBody(),
+          Expanded(child: SingleChildScrollView(child: FoodPageBody())),
         ]
       ),
     );
