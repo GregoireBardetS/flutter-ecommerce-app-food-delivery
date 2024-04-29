@@ -84,58 +84,80 @@ class _FoodPageBodyState extends State<FoodPageBody> {
             ],
           )
         ),
-        Container(
-          height:9000,
-          child: ListView.builder(
-            //shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 10,
-            itemBuilder: (context, index){
-              return Container(
-                width: 150,
-                height: 150,
-                margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
-                child:Row(
-                  children: [
-                    //image container
-                    Container(
-                      width: 120,
-                      height: 120,
+        ListView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          itemCount: 10,
+          itemBuilder: (context, index){
+            return Container(
+              width: 150,
+              height: 150,
+              margin: EdgeInsets.only(left: Dimensions.width20, right: Dimensions.width20),
+              child:Row(
+                children: [
+                  //image container
+                  Container(
+                    width: Dimensions.listViewImgSize,
+                    height: Dimensions.listViewImgSize,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(Dimensions.radius20),
+                      color: Colors.white38,
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/image/food0.png")
+                        ),
+                    )
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: Dimensions.listViewTextContSize,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(Dimensions.radius20),
-                        color: Colors.white38,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/image/food0.png")
-                          ),
+                        borderRadius: BorderRadius.only(
+                          topRight: Radius.circular(Dimensions.radius20),
+                          bottomRight: Radius.circular(Dimensions.radius20)
+                        ),
+                        color: Colors.white
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.only(left: Dimensions.width10),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            BigText(text: "Nutritious fruit meal in China"),
+                            SizedBox(height: Dimensions.height10),
+                            SmallText(text: "With chinese characteristics"),
+                            SizedBox(height: Dimensions.height10),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                IconAndTextWidget(
+                                  icon: Icons.circle_sharp,
+                                  text: 'Normal',
+                                  iconColor: AppColors.iconColor1
+                                ),
+                                IconAndTextWidget(
+                                  icon: Icons.location_on,
+                                  text: '1.6km',
+                                  iconColor: AppColors.mainColor
+                                ),
+                                IconAndTextWidget(
+                                  icon: Icons.access_time_rounded,
+                                  text: '32min',
+                                  iconColor: AppColors.iconColor2
+                                ),
+                              ]
+                            )
+                          ],
+                        )
                       )
                     ),
-                    Expanded(
-                      child: Container(
-                        height: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(Dimensions.radius20),
-                            bottomRight: Radius.circular(Dimensions.radius20)
-                          ),
-                          color: Colors.white
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.only(left: Dimensions.width10),
-                          child: Column(
-                            children: [
-                              BigText(text: "Nutritious fruit meal in Chinar")
-                            ],
-                          )
-                        )
-                      ),
-                    ),
-                  ]
-                )
-              );
-            }
-          ),
-        )
+                  ),
+                ]
+              )
+            );
+          }
+        ),
       ],
     );
   }
