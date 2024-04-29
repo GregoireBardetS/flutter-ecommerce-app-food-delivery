@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:food_delivery/home/food_page_body.dart';
+import 'package:food_delivery/pages/home/food_page_body.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 import 'package:food_delivery/widgets/big_text.dart';
@@ -48,7 +48,7 @@ class _MainFoodPage extends State<MainFoodPage> {
                         borderRadius: BorderRadius.circular(Dimensions.height15),
                         color: AppColors.mainColor,
                       ),
-                      child: Icon(Icons.search, color:Colors.white, size: Dimensions.icon24)
+                      child: Icon(Icons.search, color:Colors.white, size: Dimensions.iconSize24)
                     ),
                   )
                 ],
