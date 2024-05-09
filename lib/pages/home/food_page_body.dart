@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
+import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/icon_and_text_widget.dart';
 import 'package:food_delivery/widgets/small_text.dart';
@@ -233,50 +234,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
               ),
               child: Container(
                 margin: EdgeInsets.only(top:Dimensions.height10, left: 15, right: 15, bottom: Dimensions.height10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    BigText(
-                      text: 'Delicious dish',
-                    ),
-                    SizedBox(height: Dimensions.height10/2),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(5, (index) => Icon(Icons.star, color: AppColors.mainColor, size: Dimensions.height15,))
-                        ),
-                        SizedBox(width: 10,),
-                        SmallText(text: "4.5"),
-                        SizedBox(width: 15,),
-                        SmallText(text: "1287"),
-                        SizedBox(width: 5,),
-                        SmallText(text: "comments")
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height20),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(
-                          icon: Icons.circle_sharp,
-                          text: 'Normal',
-                          iconColor: AppColors.iconColor1
-                        ),
-                        IconAndTextWidget(
-                          icon: Icons.location_on,
-                          text: '1.6km',
-                          iconColor: AppColors.mainColor
-                        ),
-                        IconAndTextWidget(
-                          icon: Icons.access_time_rounded,
-                          text: '32min',
-                          iconColor: AppColors.iconColor2
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: AppColumn(text:'Chinese side'),
               )
             ),
           ),
